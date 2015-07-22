@@ -309,7 +309,7 @@
 				TargetAttributes = {
 					FEC6C4A91B4BE4FF00B6E89C = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = RRZ8TX5743;
+						DevelopmentTeam = 94AW54BNLD;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -321,7 +321,7 @@
 					};
 					FEC6C4C21B4BE50000B6E89C = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = RRZ8TX5743;
+						DevelopmentTeam = 94AW54BNLD;
 						TestTargetID = FEC6C4A91B4BE4FF00B6E89C;
 					};
 				};
@@ -523,9 +523,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/common.pch";
 				INFOPLIST_FILE = Hackason/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e411d277-2b55-495d-a281-15e1245e911c";
+				PROVISIONING_PROFILE = "ace94f42-330f-4edd-b36a-9700631980c3";
 			};
 			name = Debug;
 		};
@@ -537,9 +538,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/common.pch";
 				INFOPLIST_FILE = Hackason/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e411d277-2b55-495d-a281-15e1245e911c";
+				PROVISIONING_PROFILE = "ace94f42-330f-4edd-b36a-9700631980c3";
 			};
 			name = Release;
 		};

@@ -8,20 +8,26 @@
 
 #import "MainViewController.h"
 #import "MainView.h"
-@interface MainViewController()
+@interface MainViewController()<MainViewDelegate>
 
 @end
 
 @implementation MainViewController{
-    __weak IBOutlet MainView *_mainView;
+    IBOutlet MainView *_mainView;
+    AppData *_appData;
 }
 
-- (id)init{
-    if (self = [super init]){
-        [[AppData SharedManager] addObserver:self forKeyPath:@"url" options:NSKeyValueObservingOptionNew context:nil];
+
+- (instancetype)initWithCoder:(NSCoder *)coder{
+    FUNC();
+    self = [super initWithCoder:coder];
+    if (self){
+        _appData = [AppData SharedManager];
+        [_appData addObserver:self forKeyPath:@"url" options:NSKeyValueObservingOptionNew context:nil];
     }
     return self;
 }
+
 - (void)viewDidLoad{
     [super viewDidLoad];
 
@@ -34,11 +40,14 @@
     self.interactiveView.backgroundColor = [UIColor clearColor];
     self.interactiveView.center   = self.view.center;
     self.interactiveView.delegate = self;
+    _mainView.delegate = self;
 }
 
-
-
-
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    FUNC();
+    _mainView.delegate = self;
+}
 
 /**
  * Display側専用のメソッド
@@ -87,6 +96,28 @@
     FUNC();
     [self.imageView removeFromSuperview];
     [self.interactiveView removeFromSuperview];
+    
+    Contents *contents = [[Contents alloc] init];
+    contents.major = 1111;
+    contents.minor = 44;
+    contents.image = self.imageView.image;
     [self.image uploadSwipedImage:self.imageView.image text:@"stb" url:[NSURL URLWithString: @"http://133.2.37.224/Hackason/RegisterContents.php"]];
+    [_appData.queryHelper insertUploadContents:contents];
+    [imageManager saveImage:contents];
+    
+    NSArray *arrContents = [_appData.queryHelper selectUploadContents];
+    
+    
+    Contents *contentsSelected = arrContents[0];
+    
+    contentsSelected = [imageManager loadImage:contentsSelected];
+    
+}
+
+- (void)onTapChoicePicture{
+    FUNC();
+
+
+    [self showCameraroll];
 }
 @end

@@ -14,6 +14,7 @@
 static AppData* sharedAppData = nil;
 
 + (AppData *)SharedManager{
+    FUNC();
     @synchronized(self){
 		if(sharedAppData == nil){
 			sharedAppData = [[self alloc] init];
@@ -23,6 +24,7 @@ static AppData* sharedAppData = nil;
 }
 
 - (AppData *)init{
+    FUNC();
     self.apiManager = [[ApiManager alloc] init];
     self.queryHelper = [[QueryHelper alloc] init];
     return self;

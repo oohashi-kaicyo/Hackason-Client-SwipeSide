@@ -13,6 +13,19 @@
 
 @implementation MainView{
     __weak IBOutlet UICollectionView *__collectionView;
+    __weak IBOutlet UIButton *_btnAdd;
 }
-
+/*
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self){
+    }
+    return self;
+}
+*/
+- (IBAction)onTapChoicePivture:(id)sender{
+    FUNC();
+    [self.delegate onTapChoicePicture];
+}
 @end

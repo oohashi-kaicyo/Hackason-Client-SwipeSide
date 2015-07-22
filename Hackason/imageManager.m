@@ -23,7 +23,6 @@
         NSInteger status = [[responseData objectForKey:@"status"] integerValue];
         if (status == -1) {
             NSLog(@"画像のUploadに失敗");
-            
             return;
         }
         NSLog(@"success %@", responseData);
@@ -47,7 +46,7 @@
     NSString *fileName = [NSString stringWithFormat:@"%d-%d", contents.major, contents.minor];
     
     //pathの作成
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@.jpg" , [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"], fileName];
+    NSString *filePath = [NSString stringWithFormat:@"%@/images/%@.jpg" , [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"], fileName];
     
     //NSDataを作成
     NSData *dataImg = [[NSData alloc] initWithData:UIImageJPEGRepresentation(contents.image, 0.1)];//品質最低
@@ -64,11 +63,29 @@
     //major, minorからファイル名を作成
     NSString *fileName = [NSString stringWithFormat:@"%d-%d", contents.major, contents.minor];
     //pathの作成
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@.jpg" , [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"], fileName];
+    NSString *filePath = [NSString stringWithFormat:@"%@/images/%@.jpg" , [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"], fileName];
     
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     UIImage *image = [UIImage imageWithData:data];
     contents.image = image;
     return contents;
+}
+
++ (BOOL)makeDirForAppContents{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/images"];
+    
+    BOOL exists = [fileManager fileExistsAtPath:filePath];
+    if (!exists) {
+        NSError *error;
+        BOOL created = [fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:&error];
+        if (!created) {
+            NSLog(@"ディレクトリ作成失敗");
+            return NO;
+        }
+    } else {
+        return NO; // 作成済みの場合はNO
+    }
+    return YES;
 }
 @end

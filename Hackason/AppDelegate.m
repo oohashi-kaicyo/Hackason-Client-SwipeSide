@@ -15,9 +15,10 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-        // iOS8のみ対応の記述
-        [application registerForRemoteNotifications];
-
+    // iOS8のみ対応の記述
+    FUNC();
+    [application registerForRemoteNotifications];
+    [imageManager makeDirForAppContents];
     return YES;
 }
 
@@ -61,11 +62,9 @@
     NSLog(@"pushInfo: %@", [userInfo description]);
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
     NSLog(@"pushInfo in Background: %@", [userInfo description]);
     completionHandler(UIBackgroundFetchResultNoData);
-    
     [AppData SharedManager].url = @"http://133.2.37.224/tst.jpg";
 }
 

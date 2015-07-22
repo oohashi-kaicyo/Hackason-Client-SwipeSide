@@ -29,6 +29,9 @@
                             <constraint firstItem="3bG-Tb-hei" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XXg-hN-C9f"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="_mainView" destination="3bG-Tb-hei" id="glj-iG-hcQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

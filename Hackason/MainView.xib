@@ -15,6 +15,9 @@
                     <state key="normal" title="+Add">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onTapChoicePivture:" destination="iN0-l3-epB" eventType="touchUpInside" id="KVV-yz-Vty"/>
+                    </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Wxc-5w-Yw4">
                     <rect key="frame" x="0.0" y="65" width="600" height="500"/>
@@ -33,6 +36,7 @@
             </constraints>
             <connections>
                 <outlet property="__collectionView" destination="Wxc-5w-Yw4" id="ecL-UC-CNe"/>
+                <outlet property="_btnAdd" destination="Rxx-9M-ZZU" id="bS4-pQ-8fG"/>
             </connections>
             <point key="canvasLocation" x="326" y="568"/>
         </view>

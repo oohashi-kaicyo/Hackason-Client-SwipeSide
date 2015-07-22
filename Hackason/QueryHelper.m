@@ -15,6 +15,7 @@
 - (instancetype)init{
     self = [super init];
     if (self){
+        FUNC();
         dbManager = [[DbManager alloc] initDb:NO];
         [self initTable];
     }
@@ -49,7 +50,7 @@
 
 - (void)insertContents:(NSString *)strTableName contents:(Contents *)contents{
     NSString *strSql = @"";
-    strSql = [NSString stringWithFormat:@"INSERT OR REPLACE TBL INTO %@ (", strTableName];
+    strSql = [NSString stringWithFormat:@"INSERT OR REPLACE INTO %@ (", strTableName];
     strSql = [strSql stringByAppendingString:@"MAJOR, "];
     strSql = [strSql stringByAppendingString:@"MINOR)"];
     strSql = [strSql stringByAppendingString:@"VALUES ("];

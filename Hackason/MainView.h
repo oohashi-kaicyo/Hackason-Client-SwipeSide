@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "LiveNibView.h"
 
+@protocol MainViewDelegate
+- (void)onTapChoicePicture;
+@end
 
 @interface MainView : LiveNibView
-
+@property id<MainViewDelegate> delegate;
 @end

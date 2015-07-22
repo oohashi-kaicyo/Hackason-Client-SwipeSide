@@ -14,4 +14,5 @@
 - (UIImage *)getImageServer;
 + (void)saveImage:(Contents *)contents;
 + (Contents *)loadImage:(Contents *)contents;
++ (BOOL)makeDirForAppContents;
 @end
