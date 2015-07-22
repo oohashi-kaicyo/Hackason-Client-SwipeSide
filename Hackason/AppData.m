@@ -9,7 +9,6 @@
 #import "AppData.h"
 
 @implementation AppData{
-
 }
 
 static AppData* sharedAppData = nil;
@@ -25,6 +24,7 @@ static AppData* sharedAppData = nil;
 
 - (AppData *)init{
     self.apiManager = [[ApiManager alloc] init];
+    self.queryHelper = [[QueryHelper alloc] init];
     return self;
 }
 @end

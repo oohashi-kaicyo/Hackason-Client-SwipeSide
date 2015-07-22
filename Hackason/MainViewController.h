@@ -12,7 +12,7 @@
 #import "imageManager.h"
 #import "InteractiveView.h"
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController
 <UIImagePickerControllerDelegate, UINavigationControllerDelegate, InteractiveViewDelegate>
 
 @property(nonatomic) ApiManager      *apiManager;

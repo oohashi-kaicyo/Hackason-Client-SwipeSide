@@ -52,7 +52,7 @@
 
 -(void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
 {
-    NSLog(@"didDetermineState%d", state);
+    NSLog(@"didDetermineState%ld", state);
     switch (state) {
         case CLRegionStateInside: {
             [manager startRangingBeaconsInRegion:(CLBeaconRegion *)region];

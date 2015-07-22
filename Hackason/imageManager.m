@@ -8,12 +8,11 @@
 
 #import "imageManager.h"
 
+
 @implementation imageManager
 
--(void)uploadSwipedImage: (UIImage *)image text: (NSString *)text url:(NSURL *)url
-{
+-(void)uploadSwipedImage: (UIImage *)image text: (NSString *)text url:(NSURL *)url{
     NSData *imageData = [[NSData alloc] initWithData:UIImageJPEGRepresentation(image, 0.1)];//品質最低
-    
     NSMutableDictionary* texts  = [NSMutableDictionary dictionary];
     NSMutableDictionary* images = [NSMutableDictionary dictionary];
     
@@ -29,18 +28,47 @@
         }
         NSLog(@"success %@", responseData);
     } fail:^(NSInteger status) {
-        NSLog(@"画像のUploadに失敗2:%d", status);
+        NSLog(@"画像のUploadに失敗2:%ld", (long)status);
     }
-    ];
+     ];
 }
 
 - (UIImage *)getImageServer//imageURL//?向こう側でも実装
 {
-    NSURL    *url = [NSURL URLWithString:@"http://133.2.37.224/Hackason/images/apple.jpg"];
-    NSData   *dat = [NSData dataWithContentsOfURL:url];
-    UIImage  *img = [UIImage imageWithData:dat];
+    NSURL *url = [NSURL URLWithString:@"http://133.2.37.224/Hackason/images/apple.jpg"];
+    NSData *dat = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [UIImage imageWithData:dat];
     
     return img;
 }
 
++ (void)saveImage:(Contents *)contents{
+    //major, minorからファイル名を作成
+    NSString *fileName = [NSString stringWithFormat:@"%d-%d", contents.major, contents.minor];
+    
+    //pathの作成
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@.jpg" , [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"], fileName];
+    
+    //NSDataを作成
+    NSData *dataImg = [[NSData alloc] initWithData:UIImageJPEGRepresentation(contents.image, 0.1)];//品質最低
+    
+    NSLog(@"%@", filePath);
+    if([dataImg writeToFile:filePath atomically:YES]) {
+        NSLog(@"OK");
+    } else {
+        NSLog(@"Error");
+    };
+}
+
++ (Contents *)loadImage:(Contents *)contents{
+    //major, minorからファイル名を作成
+    NSString *fileName = [NSString stringWithFormat:@"%d-%d", contents.major, contents.minor];
+    //pathの作成
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@.jpg" , [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"], fileName];
+    
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    UIImage *image = [UIImage imageWithData:data];
+    contents.image = image;
+    return contents;
+}
 @end

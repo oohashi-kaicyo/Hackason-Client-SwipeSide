@@ -7,13 +7,14 @@
 //
 
 #import "ApiManager.h"
-
+#import "QueryHelper.h"
 @interface AppData : NSObject
 
 @property ApiManager *apiManager;
-
-+ (AppData *)SharedManager;
-
+@property QueryHelper *queryHelper;
 @property(nonatomic) NSString *url;
 
+
+
++ (AppData *)SharedManager;
 @end

@@ -7,10 +7,11 @@
 //
 
 #import "ReqHTTP.h"
-
+#import "Contents.h"
 @interface imageManager : NSObject
 
 - (void)uploadSwipedImage: (UIImage *)image text: (NSString *)text url:(NSURL *)url;
 - (UIImage *)getImageServer;
-
++ (void)saveImage:(Contents *)contents;
++ (Contents *)loadImage:(Contents *)contents;
 @end
