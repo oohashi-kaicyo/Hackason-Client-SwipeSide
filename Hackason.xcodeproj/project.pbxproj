@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A53D4E5F1B624275005966D1 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58144041B623B7000578DDA /* ImageCollectionViewCell.xib */; };
+		A53D4E631B624E43005966D1 /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53D4E611B624E43005966D1 /* UploadViewController.m */; };
+		A53D4E641B624E43005966D1 /* UploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53D4E621B624E43005966D1 /* UploadViewController.xib */; };
+		A53D4E681B624F7F005966D1 /* DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53D4E661B624F7F005966D1 /* DownloadViewController.m */; };
+		A53D4E691B624F7F005966D1 /* DownloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53D4E671B624F7F005966D1 /* DownloadViewController.xib */; };
+		A58144051B623B7000578DDA /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A58144031B623B7000578DDA /* ImageCollectionViewCell.m */; };
 		A5883B221B5FA5DF0082C7BA /* Contents.m in Sources */ = {isa = PBXBuildFile; fileRef = A5883B211B5FA5DF0082C7BA /* Contents.m */; };
 		A5883B3E1B5FAAED0082C7BA /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = A5883B351B5FAAED0082C7BA /* FMDatabase.m */; };
 		A5883B3F1B5FAAED0082C7BA /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A5883B371B5FAAED0082C7BA /* FMDatabaseAdditions.m */; };
@@ -16,10 +22,10 @@
 		A5883B441B5FAB700082C7BA /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A5883B431B5FAB700082C7BA /* libsqlite3.0.dylib */; };
 		A5883B471B5FAD500082C7BA /* DbManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5883B451B5FAD500082C7BA /* DbManager.m */; };
 		A5883B4A1B5FAE850082C7BA /* QueryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5883B491B5FAE850082C7BA /* QueryHelper.m */; };
-		A59868961B590681007AF57C /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = A59868951B590681007AF57C /* MainView.m */; };
+		A59868961B590681007AF57C /* ContentsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A59868951B590681007AF57C /* ContentsCollectionView.m */; };
 		A59868991B590913007AF57C /* LiveNibView.m in Sources */ = {isa = PBXBuildFile; fileRef = A59868981B590913007AF57C /* LiveNibView.m */; };
-		A598689B1B59149F007AF57C /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A598689A1B59149F007AF57C /* MainView.xib */; };
-		FE96AAF31B4E7AC600AA2DAE /* imageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE96AAF21B4E7AC600AA2DAE /* imageManager.m */; };
+		A598689B1B59149F007AF57C /* ContentsCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A598689A1B59149F007AF57C /* ContentsCollectionView.xib */; };
+		FE96AAF31B4E7AC600AA2DAE /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE96AAF21B4E7AC600AA2DAE /* ImageManager.m */; };
 		FE96AAF91B4E7F8C00AA2DAE /* ReqHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = FE96AAF81B4E7F8C00AA2DAE /* ReqHTTP.m */; };
 		FEC6C4B01B4BE4FF00B6E89C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC6C4AF1B4BE4FF00B6E89C /* main.m */; };
 		FEC6C4B31B4BE4FF00B6E89C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC6C4B21B4BE4FF00B6E89C /* AppDelegate.m */; };
@@ -49,6 +55,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A53D4E601B624E43005966D1 /* UploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadViewController.h; sourceTree = "<group>"; };
+		A53D4E611B624E43005966D1 /* UploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadViewController.m; sourceTree = "<group>"; };
+		A53D4E621B624E43005966D1 /* UploadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UploadViewController.xib; sourceTree = "<group>"; };
+		A53D4E651B624F7F005966D1 /* DownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadViewController.h; sourceTree = "<group>"; };
+		A53D4E661B624F7F005966D1 /* DownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadViewController.m; sourceTree = "<group>"; };
+		A53D4E671B624F7F005966D1 /* DownloadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadViewController.xib; sourceTree = "<group>"; };
+		A58144021B623B7000578DDA /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
+		A58144031B623B7000578DDA /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
+		A58144041B623B7000578DDA /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		A5883B201B5FA5DF0082C7BA /* Contents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contents.h; sourceTree = "<group>"; };
 		A5883B211B5FA5DF0082C7BA /* Contents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contents.m; sourceTree = "<group>"; };
 		A5883B341B5FAAED0082C7BA /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -66,13 +81,13 @@
 		A5883B461B5FAD500082C7BA /* DbManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbManager.h; sourceTree = "<group>"; };
 		A5883B481B5FAE850082C7BA /* QueryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryHelper.h; sourceTree = "<group>"; };
 		A5883B491B5FAE850082C7BA /* QueryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryHelper.m; sourceTree = "<group>"; };
-		A59868941B590681007AF57C /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
-		A59868951B590681007AF57C /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		A59868941B590681007AF57C /* ContentsCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentsCollectionView.h; sourceTree = "<group>"; };
+		A59868951B590681007AF57C /* ContentsCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentsCollectionView.m; sourceTree = "<group>"; };
 		A59868971B590913007AF57C /* LiveNibView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveNibView.h; sourceTree = "<group>"; };
 		A59868981B590913007AF57C /* LiveNibView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveNibView.m; sourceTree = "<group>"; };
-		A598689A1B59149F007AF57C /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
-		FE96AAF11B4E7AC600AA2DAE /* imageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageManager.h; sourceTree = "<group>"; };
-		FE96AAF21B4E7AC600AA2DAE /* imageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageManager.m; sourceTree = "<group>"; };
+		A598689A1B59149F007AF57C /* ContentsCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentsCollectionView.xib; sourceTree = "<group>"; };
+		FE96AAF11B4E7AC600AA2DAE /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
+		FE96AAF21B4E7AC600AA2DAE /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 		FE96AAF71B4E7F8C00AA2DAE /* ReqHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReqHTTP.h; sourceTree = "<group>"; };
 		FE96AAF81B4E7F8C00AA2DAE /* ReqHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReqHTTP.m; sourceTree = "<group>"; };
 		FEC6C4AA1B4BE4FF00B6E89C /* Hackason.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackason.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,8 +164,8 @@
 			children = (
 				FEC6C4D31B4BE74F00B6E89C /* ApiManager.h */,
 				FEC6C4D41B4BE74F00B6E89C /* ApiManager.m */,
-				FE96AAF11B4E7AC600AA2DAE /* imageManager.h */,
-				FE96AAF21B4E7AC600AA2DAE /* imageManager.m */,
+				FE96AAF11B4E7AC600AA2DAE /* ImageManager.h */,
+				FE96AAF21B4E7AC600AA2DAE /* ImageManager.m */,
 				FE96AAF71B4E7F8C00AA2DAE /* ReqHTTP.h */,
 				FE96AAF81B4E7F8C00AA2DAE /* ReqHTTP.m */,
 			);
@@ -198,10 +213,19 @@
 				FEC6C4B21B4BE4FF00B6E89C /* AppDelegate.m */,
 				FEC6C4B41B4BE4FF00B6E89C /* MainViewController.h */,
 				FEC6C4B51B4BE4FF00B6E89C /* MainViewController.m */,
+				A53D4E601B624E43005966D1 /* UploadViewController.h */,
+				A53D4E611B624E43005966D1 /* UploadViewController.m */,
+				A53D4E621B624E43005966D1 /* UploadViewController.xib */,
+				A53D4E651B624F7F005966D1 /* DownloadViewController.h */,
+				A53D4E661B624F7F005966D1 /* DownloadViewController.m */,
+				A53D4E671B624F7F005966D1 /* DownloadViewController.xib */,
 				FEC6C4B71B4BE4FF00B6E89C /* Main.storyboard */,
-				A59868941B590681007AF57C /* MainView.h */,
-				A59868951B590681007AF57C /* MainView.m */,
-				A598689A1B59149F007AF57C /* MainView.xib */,
+				A59868941B590681007AF57C /* ContentsCollectionView.h */,
+				A59868951B590681007AF57C /* ContentsCollectionView.m */,
+				A598689A1B59149F007AF57C /* ContentsCollectionView.xib */,
+				A58144021B623B7000578DDA /* ImageCollectionViewCell.h */,
+				A58144031B623B7000578DDA /* ImageCollectionViewCell.m */,
+				A58144041B623B7000578DDA /* ImageCollectionViewCell.xib */,
 				A59868971B590913007AF57C /* LiveNibView.h */,
 				A59868981B590913007AF57C /* LiveNibView.m */,
 				FEC6C4BA1B4BE50000B6E89C /* Images.xcassets */,
@@ -350,9 +374,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53D4E5F1B624275005966D1 /* ImageCollectionViewCell.xib in Resources */,
+				A53D4E641B624E43005966D1 /* UploadViewController.xib in Resources */,
 				FEC6C4B91B4BE4FF00B6E89C /* Main.storyboard in Resources */,
-				A598689B1B59149F007AF57C /* MainView.xib in Resources */,
+				A598689B1B59149F007AF57C /* ContentsCollectionView.xib in Resources */,
 				FEC6C4BE1B4BE50000B6E89C /* LaunchScreen.xib in Resources */,
+				A53D4E691B624F7F005966D1 /* DownloadViewController.xib in Resources */,
 				FEC6C4BB1B4BE50000B6E89C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,19 +400,22 @@
 			files = (
 				FEC6C4DE1B4BF1C000B6E89C /* BroadCaster.m in Sources */,
 				FEC6C4D71B4BE74F00B6E89C /* ApiManager.m in Sources */,
+				A53D4E681B624F7F005966D1 /* DownloadViewController.m in Sources */,
 				FEC6C4B61B4BE4FF00B6E89C /* MainViewController.m in Sources */,
 				A5883B471B5FAD500082C7BA /* DbManager.m in Sources */,
 				A5883B3E1B5FAAED0082C7BA /* FMDatabase.m in Sources */,
 				FEC6C5221B4CE46C00B6E89C /* Observer.m in Sources */,
 				A5883B421B5FAAED0082C7BA /* FMResultSet.m in Sources */,
 				FEC6C4B31B4BE4FF00B6E89C /* AppDelegate.m in Sources */,
+				A53D4E631B624E43005966D1 /* UploadViewController.m in Sources */,
+				A58144051B623B7000578DDA /* ImageCollectionViewCell.m in Sources */,
 				A5883B221B5FA5DF0082C7BA /* Contents.m in Sources */,
 				A5883B3F1B5FAAED0082C7BA /* FMDatabaseAdditions.m in Sources */,
 				A59868991B590913007AF57C /* LiveNibView.m in Sources */,
-				A59868961B590681007AF57C /* MainView.m in Sources */,
+				A59868961B590681007AF57C /* ContentsCollectionView.m in Sources */,
 				FEC6C4B01B4BE4FF00B6E89C /* main.m in Sources */,
 				FEC6C4D81B4BE74F00B6E89C /* AppData.m in Sources */,
-				FE96AAF31B4E7AC600AA2DAE /* imageManager.m in Sources */,
+				FE96AAF31B4E7AC600AA2DAE /* ImageManager.m in Sources */,
 				A5883B4A1B5FAE850082C7BA /* QueryHelper.m in Sources */,
 				FEFE0C4E1B55092D0015A60A /* InteractiveView.m in Sources */,
 				FE96AAF91B4E7F8C00AA2DAE /* ReqHTTP.m in Sources */,

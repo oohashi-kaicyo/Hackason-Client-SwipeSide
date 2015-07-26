@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 Yasuhiro.Hashimoto. All rights reserved.
 //
 
-#import "imageManager.h"
+#import "ImageManager.h"
 
 
-@implementation imageManager
+@implementation ImageManager
 
 -(void)uploadSwipedImage: (UIImage *)image text: (NSString *)text url:(NSURL *)url{
     NSData *imageData = [[NSData alloc] initWithData:UIImageJPEGRepresentation(image, 0.1)];//品質最低

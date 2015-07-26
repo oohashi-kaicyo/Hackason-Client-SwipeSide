@@ -18,7 +18,7 @@
     // iOS8のみ対応の記述
     FUNC();
     [application registerForRemoteNotifications];
-    [imageManager makeDirForAppContents];
+    [ImageManager makeDirForAppContents];
     return YES;
 }
 

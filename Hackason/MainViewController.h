@@ -9,20 +9,17 @@
 #import "ApiManager.h"
 #import "BroadCaster.h"
 #import "Observer.h"
-#import "imageManager.h"
+#import "ImageManager.h"
 #import "InteractiveView.h"
 
 @interface MainViewController : UIViewController
-<UIImagePickerControllerDelegate, UINavigationControllerDelegate, InteractiveViewDelegate>
 
 @property(nonatomic) ApiManager      *apiManager;
 @property(nonatomic) Observer        *observer;
-@property(nonatomic) imageManager    *image;
+@property(nonatomic) ImageManager    *image;
 @property(nonatomic) CGRect           imageViewSize;
 @property(nonatomic) UIImageView     *imageView;
 @property(nonatomic) InteractiveView *interactiveView;
-
-- (void)showCameraroll;
 
 @end
 

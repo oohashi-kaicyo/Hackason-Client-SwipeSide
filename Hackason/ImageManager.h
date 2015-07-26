@@ -8,7 +8,7 @@
 
 #import "ReqHTTP.h"
 #import "Contents.h"
-@interface imageManager : NSObject
+@interface ImageManager : NSObject
 
 - (void)uploadSwipedImage: (UIImage *)image text: (NSString *)text url:(NSURL *)url;
 - (UIImage *)getImageServer;

@@ -13,6 +13,7 @@
 
 static AppData* sharedAppData = nil;
 
+
 + (AppData *)SharedManager{
     FUNC();
     @synchronized(self){
@@ -27,6 +28,7 @@ static AppData* sharedAppData = nil;
     FUNC();
     self.apiManager = [[ApiManager alloc] init];
     self.queryHelper = [[QueryHelper alloc] init];
+    self.arrUploadContents = [NSArray array];
     return self;
 }
 @end

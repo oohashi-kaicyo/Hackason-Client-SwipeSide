@@ -32,4 +32,7 @@
 #define ITOSTR(integer) [NSString stringWithFormat:@"%d", integer]
 #define LITOSTR(integer) [NSString stringWithFormat:@"%ld", integer]
 
+#define SCREEN_W [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_H [[UIScreen mainScreen] bounds].size.height
+
 #define ORIENTATION [[UIDevice currentDevice] orientation]

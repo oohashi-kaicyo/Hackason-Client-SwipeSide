@@ -7,7 +7,7 @@
 //
 
 #import "BroadCaster.h"
-#import "imageManager.h"
+#import "ImageManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -13,7 +13,7 @@
 @property ApiManager *apiManager;
 @property QueryHelper *queryHelper;
 @property(nonatomic) NSString *url;
-
+@property(nonatomic) NSArray *arrUploadContents;
 
 
 + (AppData *)SharedManager;
