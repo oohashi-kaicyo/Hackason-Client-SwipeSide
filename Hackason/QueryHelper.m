@@ -8,24 +8,22 @@
 
 #import "QueryHelper.h"
 #import "DbManager.h"
-@implementation QueryHelper{
+@implementation QueryHelper {
     DbManager *dbManager;
 }
 
-- (instancetype)init{
+- (instancetype)init {
     self = [super init];
-    if (self){
-        FUNC();
+    if (self) {
         dbManager = [[DbManager alloc] initDb:NO];
         [self initTable];
     }
     return self;
 }
 
-- (void)initTable{
+- (void)initTable {
     NSString *strSql = @"";
     [dbManager begin];
-    
     strSql = @"CREATE TABLE IF NOT EXISTS TBL_UPLOAD (";
     strSql = [strSql stringByAppendingString:@"MAJOR INTEGER, "];
     strSql = [strSql stringByAppendingString:@"MINOR INTEGER UNIQUE)"];
@@ -40,15 +38,15 @@
     [dbManager commit];
 }
 
-- (void)insertUploadContents:(Contents *)contents{
+- (void)insertUploadContents:(Contents *)contents {
     [self insertContents:@"TBL_UPLOAD" contents:contents];
 }
 
-- (void)insertDownLoadContents:(Contents *)contents{
+- (void)insertDownLoadContents:(Contents *)contents {
     [self insertContents:@"TBL_DOWNLOAD" contents:contents];
 }
 
-- (void)insertContents:(NSString *)strTableName contents:(Contents *)contents{
+- (void)insertContents:(NSString *)strTableName contents:(Contents *)contents {
     NSString *strSql = @"";
     strSql = [NSString stringWithFormat:@"INSERT OR REPLACE INTO %@ (", strTableName];
     strSql = [strSql stringByAppendingString:@"MAJOR, "];
@@ -60,21 +58,20 @@
     [dbManager update:strSql];
 }
 
-- (NSArray *)selectUploadContents{
+- (NSArray *)selectUploadContents {
     return  [self selectContents:@"TBL_UPLOAD"];
 }
-- (NSArray *)selectDownloadContents{
+- (NSArray *)selectDownloadContents {
     return  [self selectContents:@"TBL_DOWNLOAD"];
 }
 
-- (NSArray *)selectContents:(NSString *)strTableName{
+- (NSArray *)selectContents:(NSString *)strTableName {
     NSString *strSql = @"";
     NSMutableArray *aryContents = [[NSMutableArray alloc] init];
     
     strSql = [NSString stringWithFormat:@"SELECT * FROM %@", strTableName];
-    LOG(@"selectContents:%@ = %@",strTableName, strSql);
     FMResultSet *resultSet = [dbManager select:strSql];
-    while ([resultSet next]){
+    while ([resultSet next]) {
         Contents *contents = [[Contents alloc] init];
         contents.major = [resultSet intForColumn:@"MAJOR"];
         contents.minor = [resultSet intForColumn:@"MINOR"];

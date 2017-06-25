@@ -12,7 +12,7 @@
 @implementation ImageManager
 
 -(void)uploadSwipedImage: (UIImage *)image text: (NSString *)text url:(NSURL *)url{
-    NSData *imageData = [[NSData alloc] initWithData:UIImageJPEGRepresentation(image, 0.1)];//品質最低
+    NSData *imageData = [[NSData alloc] initWithData:UIImageJPEGRepresentation(image, 0.1)];
     NSMutableDictionary* texts  = [NSMutableDictionary dictionary];
     NSMutableDictionary* images = [NSMutableDictionary dictionary];
     
@@ -32,37 +32,25 @@
      ];
 }
 
-- (UIImage *)getImageServer//imageURL//?向こう側でも実装
+- (UIImage *)getImageServer
 {
-    NSURL *url = [NSURL URLWithString:@"http://133.2.37.224/Hackason/images/apple.jpg"];
+    NSURL *url = [NSURL URLWithString:@"****"];
     NSData *dat = [NSData dataWithContentsOfURL:url];
     UIImage *img = [UIImage imageWithData:dat];
-    
     return img;
 }
 
-+ (void)saveImage:(Contents *)contents{
-    //major, minorからファイル名を作成
++ (void)saveImage:(Contents *)contents {
     NSString *fileName = [NSString stringWithFormat:@"%d-%d", contents.major, contents.minor];
-    
-    //pathの作成
     NSString *filePath = [NSString stringWithFormat:@"%@/images/%@.jpg" , [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"], fileName];
-    
-    //NSDataを作成
-    NSData *dataImg = [[NSData alloc] initWithData:UIImageJPEGRepresentation(contents.image, 0.1)];//品質最低
-    
-    NSLog(@"%@", filePath);
+    NSData *dataImg = [[NSData alloc] initWithData:UIImageJPEGRepresentation(contents.image, 0.1)];
     if([dataImg writeToFile:filePath atomically:YES]) {
-        NSLog(@"OK");
     } else {
-        NSLog(@"Error");
     };
 }
 
-+ (Contents *)loadImage:(Contents *)contents{
-    //major, minorからファイル名を作成
++ (Contents *)loadImage:(Contents *)contents {
     NSString *fileName = [NSString stringWithFormat:@"%d-%d", contents.major, contents.minor];
-    //pathの作成
     NSString *filePath = [NSString stringWithFormat:@"%@/images/%@.jpg" , [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"], fileName];
     
     NSData *data = [NSData dataWithContentsOfFile:filePath];
@@ -71,20 +59,18 @@
     return contents;
 }
 
-+ (BOOL)makeDirForAppContents{
++ (BOOL)makeDirForAppContents {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/images"];
-    
     BOOL exists = [fileManager fileExistsAtPath:filePath];
     if (!exists) {
         NSError *error;
         BOOL created = [fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:&error];
         if (!created) {
-            NSLog(@"ディレクトリ作成失敗");
             return NO;
         }
     } else {
-        return NO; // 作成済みの場合はNO
+        return NO;
     }
     return YES;
 }

@@ -8,17 +8,17 @@
 
 #import "LiveNibView.h"
 
-@implementation LiveNibView{
+@implementation LiveNibView {
 }
 
-- (LiveNibView *)loadNib{
+- (LiveNibView *)loadNib {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     return [bundle loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil][0];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if (self){
+    if (self) {
         LiveNibView *view = [self loadNib];
         view.frame = self.bounds;
         view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -26,8 +26,9 @@
     }
     return self;
 }
-- (id)awakeAfterUsingCoder:(NSCoder *)aDecoder{
-    if([[self subviews] count] == 0){
+
+- (id)awakeAfterUsingCoder:(NSCoder *)aDecoder {
+    if([[self subviews] count] == 0) {
         LiveNibView *view = [self loadNib];
         [view setTranslatesAutoresizingMaskIntoConstraints:false];
         NSArray *constraints =[self constraints];

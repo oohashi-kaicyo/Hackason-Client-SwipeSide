@@ -24,7 +24,7 @@ static AppData* sharedAppData = nil;
 	return sharedAppData;
 }
 
-- (AppData *)init{
+- (AppData *)init {
     FUNC();
     self.apiManager = [[ApiManager alloc] init];
     self.queryHelper = [[QueryHelper alloc] init];

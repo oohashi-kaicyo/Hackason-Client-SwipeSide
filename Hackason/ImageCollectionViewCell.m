@@ -8,10 +8,10 @@
 
 #import "ImageCollectionViewCell.h"
 
-@implementation ImageCollectionViewCell{
+@implementation ImageCollectionViewCell {
 }
 
-- (void)awakeFromNib{
+- (void)awakeFromNib {
 }
 
 @end

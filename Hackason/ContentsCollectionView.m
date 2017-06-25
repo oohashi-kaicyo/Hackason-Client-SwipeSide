@@ -12,34 +12,30 @@
 @interface ContentsCollectionView()<UICollectionViewDelegate, UICollectionViewDataSource>
 @end
 
-@implementation ContentsCollectionView{
+@implementation ContentsCollectionView {
     AppData *_appData;
     __weak IBOutlet  UICollectionView *_collectionView;
     __weak IBOutlet UIButton *_btnAdd;
     __weak IBOutlet UILabel *_labelTitle;
-    
     NSArray *_arrContents;
-    
     IBInspectable NSString *_title;
 }
 
-- (void)awakeFromNib{
+- (void)awakeFromNib {
     [super awakeFromNib];
-
     _appData = [AppData SharedManager];
     [_labelTitle setText:_title];
 }
 
-- (void)reloadData{
-    FUNC();
+- (void)reloadData {
     [_collectionView reloadData];
 }
 
-- (void)setContentsList:(NSArray *)list{
+- (void)setContentsList:(NSArray *)list {
     _arrContents = list;
 }
 
-- (void)initCollectionView{
+- (void)initCollectionView {
     UINib *nib = [UINib nibWithNibName:@"ImageCollectionViewCell" bundle:nil];
     [_collectionView registerNib:nib forCellWithReuseIdentifier:@"cellcontents"];
     
@@ -53,32 +49,26 @@
     [_collectionView setCollectionViewLayout:flowLayout];
 }
 
-- (IBAction)onTapChoicePivture:(id)sender{
-    FUNC();
+- (IBAction)onTapChoicePivture:(id)sender {
     [self.delegate onTapAdd];
 }
-
 #pragma mark - UICollectionViewDelegater
 
 #pragma mark - UICollectionViewDataSource
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    FUNC();
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [_arrContents count];
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    FUNC();
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
-- (ImageCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    FUNC();
+- (ImageCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellcontents" forIndexPath:indexPath];
     [cell setBackgroundColor:[UIColor redColor]];
     Contents *contents = _arrContents[indexPath.row];
     [cell.ivContents setImage:contents.image];
     return cell;
 }
-
 @end

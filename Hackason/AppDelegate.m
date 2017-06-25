@@ -15,7 +15,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // iOS8のみ対応の記述
     FUNC();
     [application registerForRemoteNotifications];
     [ImageManager makeDirForAppContents];

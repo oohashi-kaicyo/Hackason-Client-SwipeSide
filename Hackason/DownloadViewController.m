@@ -13,20 +13,15 @@
 @end
 
 @implementation DownloadViewController
-- (void)viewDidLoad{
-    FUNC();
+- (void)viewDidLoad {
     [super viewDidLoad];
-//        [_contentsCollectionView initCollectionView];
 }
 
-
-
-- (void)viewDidAppear:(BOOL)animated{
-    FUNC();
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
 
-- (void)didReceiveMemoryWarning{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 @end
